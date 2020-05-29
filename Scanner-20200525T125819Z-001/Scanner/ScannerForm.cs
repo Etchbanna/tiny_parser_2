@@ -180,7 +180,10 @@ namespace Scanner
                             if (i == s.Length) state = nameofState.END;
                             else state = nameofState.START;
                         }
-                        else state = nameofState.END;
+                        else {
+                        state = nameofState.END;
+                        TokensLabel.Text = "Scanner Error: Invalid Token Detected!";
+                        }
                         break;
                     case nameofState.COMMENTSTATEMENT:
                         if (state == nameofState.COMMENTSTATEMENT)
